@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <header>
+    <!-- router-link 定义点击后导航到哪个路径下 -->
+  </header>
+  <Button style="float: right" @click="login">登录</Button>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { Button } from "ant-design-vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Button,
+  },
+  methods: {
+    login() {
+      this.$router.push("/login");
+    },
+  },
+};
 </script>
 
 <style>
@@ -19,8 +26,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
